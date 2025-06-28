@@ -5,6 +5,8 @@ const fs = require('fs');
 
 const PORT = 3000;
 const URLS_PATH = 'urls.json';
+const HOST_URL = "https://linkeshortner.onrender.com"; // <-- Render URL
+
 app.use(express.static('public'));
 app.use(express.json());
 
@@ -32,7 +34,7 @@ app.post('/add', (req, res) => {
   if (!code || !url) return res.status(400).send('Missing code or url');
   urls[code] = url;
   fs.writeFileSync(URLS_PATH, JSON.stringify(urls, null, 2));
-  res.send(`Short link created: http://localhost:${PORT}/${code}`);
+  res.send(`✅ Short link created: ${HOST_URL}/${code}`);
 });
 
-app.listen(PORT, () => console.log(`Running at http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`✅ Server running at ${HOST_URL}`));
