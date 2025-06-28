@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Advertisement</title>
+  <script>
+    const short = window.location.pathname.split("/")[1];
+    setTimeout(() => {
+      window.location.href = "/go/" + short;
+    }, 5000); // Wait 5 seconds
+  </script>
+</head>
+<body>
+  <h2>Please wait... You will be redirected shortly</h2>
+
+  <!-- Paste your Adsterra or Popunder script here -->
+  <script type='text/javascript' src='//YOUR-ADSTERRA-LINK.js'></script>
+</body>
+</html>
