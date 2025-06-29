@@ -1,18 +1,104 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Advertisement</title>
-  <script>
-    const short = window.location.pathname.split("/")[1];
-    setTimeout(() => {
-      window.location.href = "/go/" + short;
-    }, 5000); // Wait 5 seconds
-  </script>
+  <meta charset="UTF-8">
+  <title>AI Technology Article</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #fff;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .btn-top {
+      background-color: #007bff;
+      color: white;
+      padding: 12px 20px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .btn-top:hover {
+      background-color: #0056b3;
+    }
+
+    .content {
+      flex: 1;
+      max-width: 800px;
+      margin: auto;
+      padding: 30px;
+    }
+
+    footer {
+      background-color: #fff;
+      text-align: center;
+      padding: 20px;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    }
+
+    .btn-bottom {
+      background-color: #28a745;
+      color: white;
+      padding: 14px 28px;
+      font-size: 18px;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .btn-bottom:hover {
+      background-color: #218838;
+    }
+  </style>
 </head>
 <body>
-  <h2>Please wait... You will be redirected shortly</h2>
 
-  <!-- Paste your Adsterra or Popunder script here -->
-  <script type='text/javascript' src='//YOUR-ADSTERRA-LINK.js'></script>
+  <header>
+    <button class="btn-top" onclick="scrollToBottom()">Continue to Bottom</button>
+  </header>
+
+  <div class="content">
+    <h1>The Rise of AI in the Modern World</h1>
+    <p>Artificial Intelligence (AI) is transforming industries and redefining how we interact with technology. From voice assistants to self-driving cars, AI is integrated into our daily lives more than ever before. In healthcare, AI is being used to diagnose diseases and recommend treatments. In finance, it's used for fraud detection and algorithmic trading.</p>
+    <p>AI also powers personalized experiences in entertainment, such as content recommendations on streaming platforms. Despite concerns around privacy, job displacement, and ethics, the benefits of AI are undeniable. Researchers and engineers continue to develop AI systems that are safer, smarter, and more aligned with human values.</p>
+    <p>As we move forward, understanding and shaping AI's role in society will be critical. Collaboration between governments, tech companies, and communities is essential to ensure AI works for the benefit of all.</p>
+  </div>
+
+  <footer id="footer">
+    <button class="btn-bottom" onclick="handleAd()">Click to Continue</button>
+  </footer>
+
+  <script>
+    let adClicked = false;
+
+    function scrollToBottom() {
+      document.getElementById("footer").scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function handleAd() {
+      if (!adClicked) {
+        adClicked = true;
+        window.open('https://www.profitableratecpm.com/xt8zqiz8?key=eae9dd097fbfd2bb63e4ed469c335ee2', '_blank'); // Replace with your real ad page
+        alert('Ad opened in a new tab. After viewing, return and click this button again to continue.');
+      } else {
+        // Go to original link
+        const code = window.location.pathname.replace('/', '');
+        window.location.href = `/go/${code}`;
+      }
+    }
+  </script>
+
 </body>
 </html>
